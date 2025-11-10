@@ -103,7 +103,7 @@ export async function getArticles(page = 1, pageSize = 10): Promise<StrapiRespon
 // Get a single article by slug
 export async function getArticleBySlug(slug: string): Promise<StrapiSingleResponse<StrapiArticle> | null> {
   const response = await strapiRequest<StrapiResponse<StrapiArticle>>(
-    `/articles?filters[slug][$eq]=${slug}&populate=deep`
+    `/articles?filters[slug][$eq]=${slug}&populate[cover]=*&populate[author][populate]=avatar&populate[category]=*&populate[blocks]=*`
   );
 
   if (response.data.length === 0) {
@@ -157,6 +157,10 @@ export interface HeroSection {
   subtitle: string;
   ctaText: string;
   ctaLink: string;
+  backgroundImage?: {
+    url: string;
+    alternativeText?: string;
+  };
 }
 
 export interface CollectionSection {
@@ -193,8 +197,8 @@ export interface GlobalContent {
 // Get homepage content
 export async function getHomepage(): Promise<HomepageContent | null> {
   try {
-    const response = await strapiRequest<{ data: { attributes: HomepageContent } }>('/homepage?populate=deep');
-    return response.data?.attributes || null;
+    const response = await strapiRequest<{ data: HomepageContent }>('/homepage?populate[hero][populate]=backgroundImage&populate[collectionSection]=*&populate[footer]=*');
+    return response.data || null;
   } catch (error) {
     console.error('Error fetching homepage:', error);
     return null;
@@ -204,8 +208,8 @@ export async function getHomepage(): Promise<HomepageContent | null> {
 // Get global settings
 export async function getGlobal(): Promise<GlobalContent | null> {
   try {
-    const response = await strapiRequest<{ data: { attributes: GlobalContent } }>('/global?populate=deep');
-    return response.data?.attributes || null;
+    const response = await strapiRequest<{ data: GlobalContent }>('/global?populate[navigationLabels]=*');
+    return response.data || null;
   } catch (error) {
     console.error('Error fetching global settings:', error);
     return null;

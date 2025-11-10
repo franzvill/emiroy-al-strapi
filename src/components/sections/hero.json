@@ -26,6 +26,12 @@
     "ctaLink": {
       "type": "string",
       "default": "#collection"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     }
   }
 }

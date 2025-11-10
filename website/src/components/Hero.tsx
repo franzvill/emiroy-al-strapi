@@ -1,5 +1,5 @@
 import heroWatch from "@/assets/hero-watch.jpg";
-import { HeroSection } from "@/lib/strapi";
+import { HeroSection, getStrapiMedia } from "@/lib/strapi";
 
 interface HeroProps {
   content?: HeroSection;
@@ -17,12 +17,17 @@ export const Hero = ({ content }: HeroProps) => {
 
   const hero = content || defaultContent;
 
+  // Get background image - use Strapi image if available, otherwise use default
+  const backgroundImage = hero.backgroundImage?.url
+    ? getStrapiMedia(hero.backgroundImage.url)
+    : heroWatch;
+
   return (
     <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center scale-105"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${heroWatch})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${backgroundImage})`,
           transition: 'transform 0.3s ease-out',
         }}
       />

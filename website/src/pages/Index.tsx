@@ -6,6 +6,7 @@ import { getHomepage, HomepageContent } from "@/lib/strapi";
 
 const Index = () => {
   const [homepage, setHomepage] = useState<HomepageContent | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const fetchHomepage = async () => {
@@ -14,13 +15,20 @@ const Index = () => {
         setHomepage(data);
       } catch (error) {
         console.error('Error fetching homepage content:', error);
+      } finally {
+        setIsLoaded(true);
       }
     };
 
     fetchHomepage();
   }, []);
 
-  // Default content as fallback
+  // Don't render content until data is loaded
+  if (!isLoaded) {
+    return null;
+  }
+
+  // Default content as fallback (only used if Strapi fails)
   const defaultCollection = {
     badge: "Limited Edition",
     title: "The Collection",
