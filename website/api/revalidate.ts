@@ -67,27 +67,38 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       console.log(`URLs to purge:`, urlsToPurge);
 
-      // Purge cache for each URL
+      // Use Vercel's purge API (cache invalidation by path)
+      // API: https://vercel.com/docs/rest-api/endpoints#purge-the-edge-cache
       const purgeResults = await Promise.allSettled(
         urlsToPurge.map(async (url) => {
-          const purgeUrl = `https://api.vercel.com/v1/purge?url=${encodeURIComponent(url)}&teamId=${VERCEL_TEAM_ID}`;
-          console.log(`Purging: ${url}`);
+          // Extract path from full URL
+          const urlObj = new URL(url);
+          const path = urlObj.pathname;
 
-          const response = await fetch(purgeUrl, {
-            method: 'GET',
+          const purgeApiUrl = `https://api.vercel.com/v1/deployments/purge`;
+
+          console.log(`Purging path: ${path} from ${urlObj.hostname}`);
+
+          const response = await fetch(purgeApiUrl, {
+            method: 'POST',
             headers: {
               Authorization: `Bearer ${VERCEL_TOKEN}`,
+              'Content-Type': 'application/json',
             },
+            body: JSON.stringify({
+              paths: [path],
+              teamId: VERCEL_TEAM_ID,
+            }),
           });
 
           const result = await response.json();
-          console.log(`Purge result for ${url}:`, response.status, result);
+          console.log(`Purge result for ${path}:`, response.status, result);
 
           if (!response.ok) {
             throw new Error(`Purge failed: ${response.status} ${JSON.stringify(result)}`);
           }
 
-          return { url, status: response.status, result };
+          return { url, path, status: response.status, result };
         })
       );
 

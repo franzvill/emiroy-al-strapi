@@ -24,9 +24,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const data = await response.json();
 
-    // Homepage content changes rarely, cache for 1 hour, serve stale for up to 24 hours
-    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
-    res.setHeader('CDN-Cache-Control', 'max-age=3600');
+    // Homepage content - cache for 1 minute, serve stale for up to 5 minutes
+    // This ensures changes appear quickly without needing cache purging
+    res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
+    res.setHeader('CDN-Cache-Control', 'max-age=60');
 
     res.status(200).json(data);
   } catch (error) {
