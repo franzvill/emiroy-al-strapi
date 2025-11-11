@@ -1,6 +1,7 @@
 // Strapi API client for fetching blog content
+// Use Vercel serverless functions for caching benefits
 const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
-const STRAPI_API_URL = `${STRAPI_URL}/api`;
+const API_BASE_URL = import.meta.env.DEV ? `${STRAPI_URL}/api` : '/api';
 
 export interface StrapiImage {
   id: number;
@@ -75,55 +76,52 @@ export interface StrapiSingleResponse<T> {
   };
 }
 
-async function strapiRequest<T>(endpoint: string): Promise<T> {
-  const url = `${STRAPI_API_URL}${endpoint}`;
+async function apiRequest<T>(endpoint: string): Promise<T> {
+  const url = `${API_BASE_URL}${endpoint}`;
 
   try {
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error(`Strapi API error: ${response.status} ${response.statusText}`);
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Error fetching from Strapi:', error);
+    console.error('Error fetching from API:', error);
     throw error;
   }
 }
 
 // Get all articles with pagination
 export async function getArticles(page = 1, pageSize = 10): Promise<StrapiResponse<StrapiArticle>> {
-  return strapiRequest<StrapiResponse<StrapiArticle>>(
-    `/articles?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=publishedAt:desc`
+  return apiRequest<StrapiResponse<StrapiArticle>>(
+    `/articles?page=${page}&pageSize=${pageSize}`
   );
 }
 
 // Get a single article by slug
 export async function getArticleBySlug(slug: string): Promise<StrapiSingleResponse<StrapiArticle> | null> {
-  const response = await strapiRequest<StrapiResponse<StrapiArticle>>(
-    `/articles?filters[slug][$eq]=${slug}&populate[cover]=*&populate[author][populate]=avatar&populate[category]=*&populate[blocks]=*`
-  );
-
-  if (response.data.length === 0) {
-    return null;
+  try {
+    return await apiRequest<StrapiSingleResponse<StrapiArticle>>(`/articles/${slug}`);
+  } catch (error: any) {
+    if (error.message?.includes('404')) {
+      return null;
+    }
+    throw error;
   }
-
-  return {
-    data: response.data[0]
-  };
 }
 
 // Get all categories
 export async function getCategories(): Promise<StrapiResponse<StrapiCategory>> {
-  return strapiRequest<StrapiResponse<StrapiCategory>>(`/categories?populate=*`);
+  return apiRequest<StrapiResponse<StrapiCategory>>(`/categories`);
 }
 
 // Get articles by category
 export async function getArticlesByCategory(categorySlug: string, page = 1, pageSize = 10): Promise<StrapiResponse<StrapiArticle>> {
-  return strapiRequest<StrapiResponse<StrapiArticle>>(
-    `/articles?filters[category][slug][$eq]=${categorySlug}&populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=publishedAt:desc`
+  return apiRequest<StrapiResponse<StrapiArticle>>(
+    `/articles?category=${categorySlug}&page=${page}&pageSize=${pageSize}`
   );
 }
 
@@ -197,7 +195,7 @@ export interface GlobalContent {
 // Get homepage content
 export async function getHomepage(): Promise<HomepageContent | null> {
   try {
-    const response = await strapiRequest<{ data: HomepageContent }>('/homepage?populate[hero][populate]=backgroundImage&populate[collectionSection]=*&populate[footer]=*');
+    const response = await apiRequest<{ data: HomepageContent }>('/homepage');
     return response.data || null;
   } catch (error) {
     console.error('Error fetching homepage:', error);
@@ -208,7 +206,7 @@ export async function getHomepage(): Promise<HomepageContent | null> {
 // Get global settings
 export async function getGlobal(): Promise<GlobalContent | null> {
   try {
-    const response = await strapiRequest<{ data: GlobalContent }>('/global?populate[navigationLabels]=*');
+    const response = await apiRequest<{ data: GlobalContent }>('/global');
     return response.data || null;
   } catch (error) {
     console.error('Error fetching global settings:', error);
