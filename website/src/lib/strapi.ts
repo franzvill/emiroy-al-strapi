@@ -1,7 +1,10 @@
 // Strapi API client for fetching blog content
 // Use Vercel serverless functions for caching benefits
 const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
-const API_BASE_URL = import.meta.env.DEV ? `${STRAPI_URL}/api` : '/api';
+
+// Use API routes by default (for caching), unless VITE_USE_DIRECT_STRAPI is set
+const USE_DIRECT_STRAPI = import.meta.env.VITE_USE_DIRECT_STRAPI === 'true';
+const API_BASE_URL = USE_DIRECT_STRAPI ? `${STRAPI_URL}/api` : '/api';
 
 export interface StrapiImage {
   id: number;
