@@ -2,25 +2,17 @@
   "collectionName": "components_shared_navigation_labels",
   "info": {
     "displayName": "Navigation Labels",
-    "description": "Labels for navigation menu"
+    "description": "Labels for header navigation"
   },
   "options": {},
   "attributes": {
+    "ourStory": {
+      "type": "string",
+      "default": "Our Story"
+    },
     "collection": {
       "type": "string",
       "default": "Collection"
-    },
-    "blog": {
-      "type": "string",
-      "default": "Blog"
-    },
-    "login": {
-      "type": "string",
-      "default": "Login"
-    },
-    "cart": {
-      "type": "string",
-      "default": "Cart"
     }
   }
 }

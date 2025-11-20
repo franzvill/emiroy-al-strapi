@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_sections_detail_showcases",
+  "info": {
+    "displayName": "Detail Showcase",
+    "description": "Product detail showcase with image and description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "MULTI-LAYERED DIAL"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": "Product Detail"
+    },
+    "footnote": {
+      "type": "string"
+    }
+  }
+}

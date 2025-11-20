@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_sections_brand_philosophies",
+  "info": {
+    "displayName": "Brand Philosophy",
+    "description": "Brand philosophy section with title and paragraphs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "TIME REFINED"
+    },
+    "tagline": {
+      "type": "string",
+      "default": "Where precision meets artistry, where heritage embraces innovation."
+    },
+    "paragraph1": {
+      "type": "text",
+      "default": "Each timepiece is a testament to our unwavering commitment to excellence. We don't simply create watches; we craft legacies, designed to transcend generations and moments in time."
+    },
+    "paragraph2": {
+      "type": "text",
+      "default": "Our philosophy is rooted in the belief that true luxury lies not in excess, but in the perfection of every detail, the integrity of every component, and the soul embedded in every creation."
+    },
+    "footerText": {
+      "type": "string",
+      "default": "ESTABLISHED TO REDEFINE HOROLOGY"
+    }
+  }
+}

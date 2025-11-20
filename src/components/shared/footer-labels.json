@@ -1,0 +1,80 @@
+{
+  "collectionName": "components_shared_footer_labels",
+  "info": {
+    "displayName": "Footer Labels",
+    "description": "Labels for footer"
+  },
+  "options": {},
+  "attributes": {
+    "aboutTitle": {
+      "type": "string",
+      "default": "About"
+    },
+    "ourStory": {
+      "type": "string",
+      "default": "Our Story"
+    },
+    "collection": {
+      "type": "string",
+      "default": "Collection"
+    },
+    "customerServiceTitle": {
+      "type": "string",
+      "default": "Customer Service"
+    },
+    "contactUs": {
+      "type": "string",
+      "default": "Contact Us"
+    },
+    "shippingReturns": {
+      "type": "string",
+      "default": "Shipping & Returns"
+    },
+    "warranty": {
+      "type": "string",
+      "default": "Warranty"
+    },
+    "followUsTitle": {
+      "type": "string",
+      "default": "Follow Us"
+    },
+    "instagram": {
+      "type": "string",
+      "default": "Instagram"
+    },
+    "instagramUrl": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string",
+      "default": "Facebook"
+    },
+    "facebookUrl": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string",
+      "default": "Twitter"
+    },
+    "twitterUrl": {
+      "type": "string"
+    },
+    "contactUsUrl": {
+      "type": "string"
+    },
+    "shippingReturnsUrl": {
+      "type": "string"
+    },
+    "warrantyUrl": {
+      "type": "string"
+    },
+    "languageTitle": {
+      "type": "string",
+      "default": "Language"
+    },
+    "copyrightText": {
+      "type": "string",
+      "default": "Emiroy-Al. All rights reserved."
+    }
+  }
+}
