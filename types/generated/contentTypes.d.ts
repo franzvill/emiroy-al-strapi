@@ -605,15 +605,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    componentLabels: Schema.Attribute.Component<
-      'labels.component-labels',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -629,12 +620,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       'shared.navigation-labels',
       false
     > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    pageLabels: Schema.Attribute.Component<'labels.page-labels', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
