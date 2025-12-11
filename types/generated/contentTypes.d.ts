@@ -793,6 +793,78 @@ export interface ApiProductGalleryProductGallery
   };
 }
 
+export interface ApiProductInfoProductInfo extends Struct.CollectionTypeSchema {
+  collectionName: 'product_infos';
+  info: {
+    description: 'Information sections for product pages (Guarantee, Payment, Delivery)';
+    displayName: 'Product Info';
+    pluralName: 'product-infos';
+    singularName: 'product-info';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    icon: Schema.Attribute.Enumeration<['guarantee', 'payment', 'delivery']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    linkText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    linkUrl: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-info.product-info'
+    >;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<0>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiShippingReturnsPageShippingReturnsPage
   extends Struct.SingleTypeSchema {
   collectionName: 'shipping_returns_pages';
@@ -1468,6 +1540,7 @@ declare module '@strapi/strapi' {
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::product-card.product-card': ApiProductCardProductCard;
       'api::product-gallery.product-gallery': ApiProductGalleryProductGallery;
+      'api::product-info.product-info': ApiProductInfoProductInfo;
       'api::shipping-returns-page.shipping-returns-page': ApiShippingReturnsPageShippingReturnsPage;
       'api::warranty-page.warranty-page': ApiWarrantyPageWarrantyPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
