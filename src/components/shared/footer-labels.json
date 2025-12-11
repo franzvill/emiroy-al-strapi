@@ -12,7 +12,7 @@
     },
     "ourStory": {
       "type": "string",
-      "default": "Our Story"
+      "default": "About Brand"
     },
     "collection": {
       "type": "string",

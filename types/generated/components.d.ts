@@ -38,6 +38,22 @@ export interface SectionsCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCollectionCta extends Struct.ComponentSchema {
+  collectionName: 'components_sections_collection_ctas';
+  info: {
+    description: 'Collection call-to-action section';
+    displayName: 'Collection CTA';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    buttonLink: Schema.Attribute.String;
+    buttonText: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsDetailShowcase extends Struct.ComponentSchema {
   collectionName: 'components_sections_detail_showcases';
   info: {
@@ -53,6 +69,28 @@ export interface SectionsDetailShowcase extends Struct.ComponentSchema {
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'MULTI-LAYERED DIAL'>;
+  };
+}
+
+export interface SharedAboutSubmenu extends Struct.ComponentSchema {
+  collectionName: 'components_shared_about_submenu';
+  info: {
+    description: 'Labels for About Brand submenu items';
+    displayName: 'About Submenu';
+  };
+  attributes: {
+    collectorsLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Private presentation for collectors'>;
+    corporateLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Corporate requests'>;
+    newsroomLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Newsroom'>;
+    ourStoryLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Our Story'>;
+    personalizedLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'You personalized a Swiss-crafted masterpiece'>;
+    retailersLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<"Retailers' partnerships application Form">;
   };
 }
 
@@ -82,7 +120,8 @@ export interface SharedFooterLabels extends Struct.ComponentSchema {
     instagramUrl: Schema.Attribute.String;
     languageTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Language'>;
-    ourStory: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Our Story'>;
+    ourStory: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'About Brand'>;
     shippingReturns: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Shipping & Returns'>;
     shippingReturnsUrl: Schema.Attribute.String;
@@ -113,7 +152,8 @@ export interface SharedNavigationLabels extends Struct.ComponentSchema {
   attributes: {
     collection: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Collection'>;
-    ourStory: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Our Story'>;
+    ourStory: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'About Brand'>;
   };
 }
 
@@ -173,7 +213,9 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'sections.brand-philosophy': SectionsBrandPhilosophy;
       'sections.card': SectionsCard;
+      'sections.collection-cta': SectionsCollectionCta;
       'sections.detail-showcase': SectionsDetailShowcase;
+      'shared.about-submenu': SharedAboutSubmenu;
       'shared.footer-labels': SharedFooterLabels;
       'shared.media': SharedMedia;
       'shared.navigation-labels': SharedNavigationLabels;

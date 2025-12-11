@@ -35,6 +35,16 @@
       },
       "component": "shared.footer-labels",
       "repeatable": false
+    },
+    "aboutSubmenu": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.about-submenu",
+      "repeatable": false
     }
   }
 }

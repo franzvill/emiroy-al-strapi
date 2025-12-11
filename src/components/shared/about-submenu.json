@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_about_submenu",
+  "info": {
+    "displayName": "About Submenu",
+    "description": "Labels for About Brand submenu items"
+  },
+  "options": {},
+  "attributes": {
+    "ourStoryLabel": {
+      "type": "string",
+      "default": "Our Story"
+    },
+    "newsroomLabel": {
+      "type": "string",
+      "default": "Newsroom"
+    },
+    "collectorsLabel": {
+      "type": "string",
+      "default": "Private presentation for collectors"
+    },
+    "retailersLabel": {
+      "type": "string",
+      "default": "Retailers' partnerships application Form"
+    },
+    "corporateLabel": {
+      "type": "string",
+      "default": "Corporate requests"
+    },
+    "personalizedLabel": {
+      "type": "string",
+      "default": "You personalized a Swiss-crafted masterpiece"
+    }
+  }
+}
