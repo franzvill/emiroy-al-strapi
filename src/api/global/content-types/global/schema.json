@@ -45,6 +45,16 @@
       },
       "component": "shared.about-submenu",
       "repeatable": false
+    },
+    "contactInfo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.contact-info",
+      "repeatable": false
     }
   }
 }

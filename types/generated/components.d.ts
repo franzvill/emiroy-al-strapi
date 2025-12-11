@@ -94,6 +94,36 @@ export interface SharedAboutSubmenu extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBoutique extends Struct.ComponentSchema {
+  collectionName: 'components_shared_boutiques';
+  info: {
+    description: 'Boutique location information';
+    displayName: 'Boutique';
+  };
+  attributes: {
+    address: Schema.Attribute.String & Schema.Attribute.Required;
+    hours: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedContactInfo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contact_info';
+  info: {
+    description: 'Contact information for footer';
+    displayName: 'Contact Info';
+  };
+  attributes: {
+    boutiques: Schema.Attribute.Component<'shared.boutique', true>;
+    boutiquesTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Our Boutiques'>;
+    email: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'support@emiroy-al.com'>;
+    phone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'+41 22 123 4567'>;
+  };
+}
+
 export interface SharedFooterLabels extends Struct.ComponentSchema {
   collectionName: 'components_shared_footer_labels';
   info: {
@@ -216,6 +246,8 @@ declare module '@strapi/strapi' {
       'sections.collection-cta': SectionsCollectionCta;
       'sections.detail-showcase': SectionsDetailShowcase;
       'shared.about-submenu': SharedAboutSubmenu;
+      'shared.boutique': SharedBoutique;
+      'shared.contact-info': SharedContactInfo;
       'shared.footer-labels': SharedFooterLabels;
       'shared.media': SharedMedia;
       'shared.navigation-labels': SharedNavigationLabels;

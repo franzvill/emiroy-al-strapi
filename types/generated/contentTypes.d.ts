@@ -489,99 +489,6 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
-  collectionName: 'contact_pages';
-  info: {
-    displayName: 'Contact Page';
-    pluralName: 'contact-pages';
-    singularName: 'contact-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    address: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    addressDescription: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    addressLabel: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    email: Schema.Attribute.String;
-    emailDescription: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    emailLabel: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::contact-page.contact-page'
-    >;
-    phone: Schema.Attribute.String;
-    phoneDescription: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    phoneLabel: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    responseTime: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -600,6 +507,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
   attributes: {
     aboutSubmenu: Schema.Attribute.Component<'shared.about-submenu', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contactInfo: Schema.Attribute.Component<'shared.contact-info', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1535,7 +1448,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
-      'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::product-card.product-card': ApiProductCardProductCard;
