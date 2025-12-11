@@ -45,6 +45,26 @@
       },
       "component": "shared.about-submenu",
       "repeatable": false
+    },
+    "pageLabels": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "labels.page-labels",
+      "repeatable": false
+    },
+    "componentLabels": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "labels.component-labels",
+      "repeatable": false
     }
   }
 }

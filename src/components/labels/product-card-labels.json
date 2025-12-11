@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_labels_product_card_labels",
+  "info": {
+    "displayName": "Product Card Labels",
+    "description": "Labels for product cards"
+  },
+  "options": {},
+  "attributes": {
+    "notAvailable": {
+      "type": "string"
+    },
+    "addedToCart": {
+      "type": "string"
+    },
+    "available": {
+      "type": "string"
+    },
+    "comingSoon": {
+      "type": "string"
+    },
+    "soldOut": {
+      "type": "string"
+    },
+    "noImage": {
+      "type": "string"
+    }
+  }
+}

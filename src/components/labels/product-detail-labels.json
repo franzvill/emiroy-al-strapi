@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_labels_product_detail_labels",
+  "info": {
+    "displayName": "Product Detail Labels",
+    "description": "Labels for the product detail page"
+  },
+  "options": {},
+  "attributes": {
+    "orderNow": {
+      "type": "string"
+    },
+    "secureYourPiece": {
+      "type": "string"
+    },
+    "notifyAvailability": {
+      "type": "string"
+    },
+    "notFoundTitle": {
+      "type": "string"
+    },
+    "notFoundMessage": {
+      "type": "string"
+    },
+    "selectOption": {
+      "type": "string"
+    }
+  }
+}

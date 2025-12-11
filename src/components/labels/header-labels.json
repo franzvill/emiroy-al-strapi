@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_labels_header_labels",
+  "info": {
+    "displayName": "Header Labels",
+    "description": "Labels for the header component"
+  },
+  "options": {},
+  "attributes": {
+    "myAccount": {
+      "type": "string"
+    },
+    "logout": {
+      "type": "string"
+    },
+    "login": {
+      "type": "string"
+    }
+  }
+}

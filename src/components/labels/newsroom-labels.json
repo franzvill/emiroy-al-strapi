@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_labels_newsroom_labels",
+  "info": {
+    "displayName": "Newsroom Labels",
+    "description": "Labels for the newsroom page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "comingSoon": {
+      "type": "string"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "string"
+    }
+  }
+}

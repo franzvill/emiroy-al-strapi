@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_labels_not_found_labels",
+  "info": {
+    "displayName": "Not Found Labels",
+    "description": "Labels for the 404 page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "returnHome": {
+      "type": "string"
+    }
+  }
+}
