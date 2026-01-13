@@ -21,6 +21,18 @@
       "multiple": true,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "hoverBaseImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "hoverRotatingElement": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     }
   }
 }
