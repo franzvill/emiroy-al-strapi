@@ -5,4 +5,18 @@ module.exports = () => ({
   seo: {
     enabled: true,
   },
+  sitemap: {
+    enabled: true,
+  },
+  slugify: {
+    enabled: true,
+    config: {
+      contentTypes: {
+        'product-card': {
+          field: 'slug',
+          references: 'name',
+        },
+      },
+    },
+  },
 });
