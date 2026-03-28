@@ -1,0 +1,71 @@
+{
+  "kind": "singleType",
+  "collectionName": "widget_configs",
+  "info": {
+    "singularName": "widget-config",
+    "pluralName": "widget-configs",
+    "displayName": "Widget Config",
+    "description": "Chat widget configuration (AgentC)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "backendUrl": {
+      "type": "string",
+      "required": true
+    },
+    "tenantId": {
+      "type": "string",
+      "default": "emiroy_al",
+      "required": true
+    },
+    "brandName": {
+      "type": "string",
+      "default": "Emiroy-Al Concierge"
+    },
+    "primaryColor": {
+      "type": "string",
+      "default": "#0a0a0a"
+    },
+    "secondaryColor": {
+      "type": "string",
+      "default": "#1a1a1a"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#b8860b"
+    },
+    "welcomeTitle": {
+      "type": "string",
+      "default": "Welcome to Emiroy-Al"
+    },
+    "welcomeSubtitle": {
+      "type": "string",
+      "default": "Presence at a glance. Confidence in the craft."
+    },
+    "welcomePlaceholder": {
+      "type": "string",
+      "default": "Ask about our collection, orders, or anything else..."
+    },
+    "shopifyAuthEnabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": ["bottom-right", "bottom-left"],
+      "default": "bottom-right"
+    }
+  }
+}
