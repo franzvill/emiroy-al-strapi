@@ -3,7 +3,7 @@
 
 import { upsertSingleEntry } from './lib/strapi-client.mjs';
 
-const locales = ['en', 'fr', 'it', 'es', 'de'];
+const locales = ['en', 'fr', 'it', 'de'];
 
 let failed = 0;
 for (const locale of locales) {
