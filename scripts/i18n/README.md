@@ -11,11 +11,17 @@ The script needs a Strapi API token with **Full Access** permissions on every co
 ```bash
 cd strapi
 set -a; source .env; set +a
-node scripts/i18n/seed-de.mjs                  # all content types
-node scripts/i18n/seed-de.mjs --only global    # one type
+NODE_EXTRA_CA_CERTS=/opt/homebrew/etc/ca-certificates/cert.pem \
+  node scripts/i18n/seed-de.mjs                  # all content types
+NODE_EXTRA_CA_CERTS=/opt/homebrew/etc/ca-certificates/cert.pem \
+  node scripts/i18n/seed-de.mjs --only global    # one type
 ```
 
 The client reads `STRAPI_FULL_ACCESS` first, falling back to `STRAPI_API_TOKEN` for compatibility. `STRAPI_URL` defaults to the production instance and can be overridden via env.
+
+### TLS / cert note
+
+Node 22's bundled CA store is missing the intermediate cert chain used by the Strapi cloud instance, so plain `node` produces `UNABLE_TO_GET_ISSUER_CERT_LOCALLY`. Pointing `NODE_EXTRA_CA_CERTS` at the Homebrew bundle (`/opt/homebrew/etc/ca-certificates/cert.pem`) fixes it. On non-Homebrew systems try `/etc/ssl/cert.pem` or any up-to-date `cacert.pem`.
 
 ## Idempotency
 

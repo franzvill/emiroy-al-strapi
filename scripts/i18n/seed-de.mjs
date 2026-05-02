@@ -14,8 +14,7 @@ const collection = (type, importer) => [
 ];
 
 const tasks = [
-  // Phase 2 / 3 entries appended here as payload files are added.
-  // single('global', () => import('./payloads/global.de.mjs')),
+  single('global', () => import('./payloads/global.de.mjs')),
 ];
 
 let failed = 0;
