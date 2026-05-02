@@ -38,15 +38,15 @@ export async function getCollection(type, { locale, populate = '*', pageSize = 1
   return r.data;
 }
 
-// Strapi v5 single-type upsert: PUT /api/{type}?locale=de creates or updates.
-export async function upsertSingleEntry(type, payload) {
-  const r = await request('PUT', `/api/${type}?locale=de`, { data: payload });
+// Strapi v5 single-type upsert: PUT /api/{type}?locale={locale} creates or updates.
+export async function upsertSingleEntry(type, payload, locale = 'de') {
+  const r = await request('PUT', `/api/${type}?locale=${locale}`, { data: payload });
   return r.data;
 }
 
-// Strapi v5 collection-type localization upsert: PUT /api/{type}/{documentId}?locale=de
-// creates the de localization if missing, or updates it if present.
-export async function upsertEntryLocalization(type, documentId, payload) {
-  const r = await request('PUT', `/api/${type}/${documentId}?locale=de`, { data: payload });
+// Strapi v5 collection-type localization upsert: PUT /api/{type}/{documentId}?locale={locale}
+// creates the localization if missing, or updates it if present.
+export async function upsertEntryLocalization(type, documentId, payload, locale = 'de') {
+  const r = await request('PUT', `/api/${type}/${documentId}?locale=${locale}`, { data: payload });
   return r.data;
 }

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_terms_sections",
+  "info": {
+    "displayName": "Terms Section",
+    "icon": "file",
+    "description": "A heading + markdown body pair for legal pages"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
