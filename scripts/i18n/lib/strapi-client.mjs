@@ -44,18 +44,9 @@ export async function upsertSingleEntry(type, payload) {
   return r.data;
 }
 
-// Collection-type create localization: POST with documentId binds to existing en sibling.
-export async function createLocalization(type, documentId, payload) {
-  const r = await request('POST', `/api/${type}?locale=de`, {
-    data: { documentId, ...payload },
-  });
-  return r.data;
-}
-
-// Collection-type update localization.
-export async function updateLocalization(type, documentId, payload) {
-  const r = await request('PUT', `/api/${type}/${documentId}?locale=de`, {
-    data: payload,
-  });
+// Strapi v5 collection-type localization upsert: PUT /api/{type}/{documentId}?locale=de
+// creates the de localization if missing, or updates it if present.
+export async function upsertEntryLocalization(type, documentId, payload) {
+  const r = await request('PUT', `/api/${type}/${documentId}?locale=de`, { data: payload });
   return r.data;
 }

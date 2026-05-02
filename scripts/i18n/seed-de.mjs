@@ -15,6 +15,12 @@ const collection = (type, importer) => [
 
 const tasks = [
   single('global', () => import('./payloads/global.de.mjs')),
+  single('homepage', () => import('./payloads/homepage.de.mjs')),
+  single('about', () => import('./payloads/about.de.mjs')),
+  single('faq-page', () => import('./payloads/faq-page.de.mjs')),
+  single('shipping-returns-page', () => import('./payloads/shipping-returns-page.de.mjs')),
+  single('warranty-page', () => import('./payloads/warranty-page.de.mjs')),
+  collection('product-infos', () => import('./payloads/product-info.de.mjs')),
 ];
 
 let failed = 0;
