@@ -4,7 +4,8 @@
   "info": {
     "singularName": "watches-page",
     "pluralName": "watches-pages",
-    "displayName": "Watches Page"
+    "displayName": "Watches Page",
+    "description": "Content for the /collection (Watches) page"
   },
   "options": {
     "draftAndPublish": false
@@ -15,6 +16,38 @@
     }
   },
   "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "subtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "content": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "bottomContent": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "seo": {
       "type": "component",
       "pluginOptions": {
