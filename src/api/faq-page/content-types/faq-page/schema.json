@@ -41,6 +41,16 @@
         }
       }
     },
+    "sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "seo": {
       "type": "component",
       "pluginOptions": {

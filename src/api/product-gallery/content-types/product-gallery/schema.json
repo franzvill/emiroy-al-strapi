@@ -33,6 +33,14 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "backgroundColor1": {
+      "type": "string",
+      "required": false
+    },
+    "backgroundColor2": {
+      "type": "string",
+      "required": false
     }
   }
 }

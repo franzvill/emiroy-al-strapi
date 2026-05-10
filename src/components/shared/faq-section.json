@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_faq_sections",
+  "info": {
+    "displayName": "FAQ Section",
+    "icon": "list",
+    "description": "A titled group of FAQ items"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq-item"
+    }
+  }
+}
