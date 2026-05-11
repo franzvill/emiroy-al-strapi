@@ -5,4 +5,7 @@ module.exports = () => ({
   seo: {
     enabled: true,
   },
+  'strapi-llm-translator': {
+    enabled: true,
+  },
 });
