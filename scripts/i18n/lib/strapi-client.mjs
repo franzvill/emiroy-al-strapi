@@ -1,4 +1,4 @@
-const STRAPI_URL = process.env.STRAPI_URL ?? 'https://awesome-prosperity-f883a3373a.strapiapp.com';
+const STRAPI_URL = process.env.STRAPI_URL ?? 'https://cms.emigeneva.ch';
 const TOKEN = process.env.STRAPI_FULL_ACCESS ?? process.env.STRAPI_API_TOKEN;
 if (!TOKEN) throw new Error('STRAPI_FULL_ACCESS (or STRAPI_API_TOKEN) is required');
 

@@ -8,7 +8,7 @@
     "description": "Manage homepage content and labels"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {
     "i18n": {

@@ -7,7 +7,7 @@
     "displayName": "Newsroom Page"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {
     "i18n": {
