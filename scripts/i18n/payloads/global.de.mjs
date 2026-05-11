@@ -22,7 +22,7 @@ export default {
     shippingReturnsUrl: null,
     warrantyUrl: null,
     languageTitle: 'Sprache',
-    copyrightText: 'Emiroy-Al. Alle Rechte vorbehalten.',
+    copyrightText: 'EMI. Alle Rechte vorbehalten.',
   },
   aboutSubmenu: {
     ourStoryLabel: 'Unsere Geschichte',
@@ -33,7 +33,7 @@ export default {
     personalizedLabel: 'Sie personalisieren ein Schweizer Meisterwerk',
   },
   contactInfo: {
-    email: 'contact@emiroy-al.com',
+    email: 'contact@emigeneva.ch',
     phone: '+41 22 311 31 69',
     boutiquesTitle: 'Unsere Boutiquen',
   },

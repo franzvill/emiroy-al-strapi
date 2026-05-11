@@ -118,7 +118,7 @@ export interface SharedContactInfo extends Struct.ComponentSchema {
     boutiquesTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Our Boutiques'>;
     email: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'support@emiroy-al.com'>;
+      Schema.Attribute.DefaultTo<'contact@emigeneva.ch'>;
     phone: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'+41 22 123 4567'>;
   };
@@ -138,7 +138,7 @@ export interface SharedFooterLabels extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'Contact Us'>;
     contactUsUrl: Schema.Attribute.String;
     copyrightText: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Emiroy-Al. All rights reserved.'>;
+      Schema.Attribute.DefaultTo<'EMI. All rights reserved.'>;
     customerServiceTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Customer Service'>;
     facebook: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Facebook'>;

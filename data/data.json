@@ -1,6 +1,6 @@
 {
   "global": {
-    "siteName": "Emiroy-Al",
+    "siteName": "EMI",
     "defaultSeo": {
       "metaTitle": "Page",
       "metaDescription": "A blog made with Strapi",
@@ -10,7 +10,7 @@
     "favicon": null
   },
   "about": {
-    "title": "About Emiroy-Al",
+    "title": "About EMI",
     "blocks": [
       {
         "__component": "shared.quote",

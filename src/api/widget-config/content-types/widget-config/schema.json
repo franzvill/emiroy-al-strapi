@@ -32,7 +32,7 @@
     },
     "brandName": {
       "type": "string",
-      "default": "Emiroy-Al Concierge"
+      "default": "EMI Concierge"
     },
     "primaryColor": {
       "type": "string",
@@ -48,7 +48,7 @@
     },
     "welcomeTitle": {
       "type": "string",
-      "default": "Welcome to Emiroy-Al"
+      "default": "Welcome to EMI"
     },
     "welcomeSubtitle": {
       "type": "string",

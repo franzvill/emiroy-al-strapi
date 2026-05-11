@@ -74,7 +74,7 @@
     },
     "copyrightText": {
       "type": "string",
-      "default": "Emiroy-Al. All rights reserved."
+      "default": "EMI. All rights reserved."
     }
   }
 }

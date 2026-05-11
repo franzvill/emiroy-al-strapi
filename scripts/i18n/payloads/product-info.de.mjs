@@ -11,7 +11,7 @@ export default {
   x4f26nhoxbx5pap4jwzl0c17: {
     title: 'Garantie & Rückgabe',
     content:
-      'Jeder Emiroy-Al-Zeitmesser ist durch eine internationale Herstellergarantie von 2 Jahren abgedeckt und gewährleistet höchste Standards in Verarbeitung und Leistung.\nRücksendungen werden innerhalb von 14 Tagen nach Lieferung akzeptiert, sofern die Uhr ungetragen, im Originalzustand und in der vollständigen Originalverpackung ist. Personalisierte und maßgefertigte Stücke sind vom Rückgaberecht ausgeschlossen. Die vollständigen Rückgabebedingungen finden Sie hier.',
+      'Jeder EMI-Zeitmesser ist durch eine internationale Herstellergarantie von 2 Jahren abgedeckt und gewährleistet höchste Standards in Verarbeitung und Leistung.\nRücksendungen werden innerhalb von 14 Tagen nach Lieferung akzeptiert, sofern die Uhr ungetragen, im Originalzustand und in der vollständigen Originalverpackung ist. Personalisierte und maßgefertigte Stücke sind vom Rückgaberecht ausgeschlossen. Die vollständigen Rückgabebedingungen finden Sie hier.',
     linkText: null,
     linkUrl: null,
     icon: 'guarantee',
