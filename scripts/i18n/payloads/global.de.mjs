@@ -34,7 +34,6 @@ export default {
   },
   contactInfo: {
     email: 'contact@emigeneva.ch',
-    phone: '+41 22 311 31 69',
     boutiquesTitle: 'Unsere Boutiquen',
   },
 };
