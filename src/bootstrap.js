@@ -24,6 +24,23 @@ async function seedExampleApp() {
   }
 }
 
+const REQUIRED_LOCALES = [
+  { code: 'en', name: 'English (en)' },
+  { code: 'fr', name: 'French (fr)' },
+  { code: 'it', name: 'Italian (it)' },
+  { code: 'de', name: 'German (de)' },
+];
+
+async function ensureLocales() {
+  const localesService = strapi.plugin('i18n').service('locales');
+  for (const { code, name } of REQUIRED_LOCALES) {
+    const existing = await localesService.findByCode(code);
+    if (existing) continue;
+    await localesService.create({ code, name });
+    console.log(`Created i18n locale: ${name}`);
+  }
+}
+
 async function isFirstRun() {
   const pluginStore = strapi.store({
     environment: strapi.config.environment,
@@ -270,5 +287,6 @@ async function main() {
 
 
 module.exports = async () => {
+  await ensureLocales();
   await seedExampleApp();
 };

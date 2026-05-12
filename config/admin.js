@@ -35,7 +35,7 @@ module.exports = ({ env }) => ({
           'api::corporate-page.corporate-page': '/corporate-requests',
           'api::retailers-page.retailers-page': '/retailers-partnership',
           'api::personalized-page.personalized-page': '/personalized',
-          'api::shipping-returns-page.shipping-returns-page': '/shipping-returns',
+          'api::shipping-returns-page.shipping-returns-page': '/shipping-returns-refund',
           'api::terms-page.terms-page': '/terms-conditions',
           'api::warranty-page.warranty-page': '/warranty-policy',
           'api::faq-page.faq-page': '/faq',

@@ -15,9 +15,7 @@ export interface SectionsBrandPhilosophy extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'Our philosophy is rooted in the belief that true luxury lies not in excess, but in the perfection of every detail, the integrity of every component, and the soul embedded in every creation.'>;
     tagline: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Where precision meets artistry, where heritage embraces innovation.'>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'TIME REFINED'>;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'TIME REFINED'>;
   };
 }
 
@@ -31,6 +29,25 @@ export interface SectionsCard extends Struct.ComponentSchema {
     ctaLink: Schema.Attribute.String;
     ctaText: Schema.Attribute.String;
     description: Schema.Attribute.RichText;
+    handwritingFont: Schema.Attribute.Enumeration<
+      [
+        'none',
+        'allura',
+        'pinyon-script',
+        'italianno',
+        'parisienne',
+        'great-vibes',
+        'tangerine',
+        'sacramento',
+        'petit-formal-script',
+        'dancing-script',
+        'caveat',
+        'homemade-apple',
+        'kalam',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'none'>;
+    handwritingText: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     subtitle: Schema.Attribute.String;
@@ -119,8 +136,32 @@ export interface SharedContactInfo extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'Our Boutiques'>;
     email: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'contact@emigeneva.ch'>;
-    phone: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'+41 22 123 4567'>;
+  };
+}
+
+export interface SharedFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faq_items';
+  info: {
+    description: 'Question and answer pair for FAQ';
+    displayName: 'FAQ Item';
+    icon: 'question';
+  };
+  attributes: {
+    answer: Schema.Attribute.RichText & Schema.Attribute.Required;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faq_sections';
+  info: {
+    description: 'A titled group of FAQ items';
+    displayName: 'FAQ Section';
+    icon: 'list';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'shared.faq-item', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -238,6 +279,19 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTermsSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_terms_sections';
+  info: {
+    description: 'A heading + markdown body pair for legal pages';
+    displayName: 'Terms Section';
+    icon: 'file';
+  };
+  attributes: {
+    body: Schema.Attribute.RichText & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -248,6 +302,8 @@ declare module '@strapi/strapi' {
       'shared.about-submenu': SharedAboutSubmenu;
       'shared.boutique': SharedBoutique;
       'shared.contact-info': SharedContactInfo;
+      'shared.faq-item': SharedFaqItem;
+      'shared.faq-section': SharedFaqSection;
       'shared.footer-labels': SharedFooterLabels;
       'shared.media': SharedMedia;
       'shared.navigation-labels': SharedNavigationLabels;
@@ -255,6 +311,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.terms-section': SharedTermsSection;
     }
   }
 }
