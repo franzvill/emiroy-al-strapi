@@ -75,6 +75,14 @@
     "copyrightText": {
       "type": "string",
       "default": "EMI. All rights reserved."
+    },
+    "sustainabilityPolicy": {
+      "type": "string",
+      "default": "Sustainability Policy"
+    },
+    "feedback": {
+      "type": "string",
+      "default": "Feedback"
     }
   }
 }

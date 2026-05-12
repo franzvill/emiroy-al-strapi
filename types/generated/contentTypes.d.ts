@@ -631,6 +631,56 @@ export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFeedbackPageFeedbackPage extends Struct.SingleTypeSchema {
+  collectionName: 'feedback_pages';
+  info: {
+    description: 'Manage Feedback page content';
+    displayName: 'Feedback Page';
+    pluralName: 'feedback-pages';
+    singularName: 'feedback-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feedback-page.feedback-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1249,6 +1299,69 @@ export interface ApiShippingReturnsPageShippingReturnsPage
         };
       }>;
     shippingTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSustainabilityPolicySustainabilityPolicy
+  extends Struct.SingleTypeSchema {
+  collectionName: 'sustainability_policies';
+  info: {
+    description: 'Manage Sustainability Policy page content';
+    displayName: 'Sustainability Policy Page';
+    pluralName: 'sustainability-policies';
+    singularName: 'sustainability-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    intro: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    lastUpdated: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sustainability-policy.sustainability-policy'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Component<'shared.terms-section', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2053,6 +2166,7 @@ declare module '@strapi/strapi' {
       'api::collectors-page.collectors-page': ApiCollectorsPageCollectorsPage;
       'api::corporate-page.corporate-page': ApiCorporatePageCorporatePage;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
+      'api::feedback-page.feedback-page': ApiFeedbackPageFeedbackPage;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::news-article.news-article': ApiNewsArticleNewsArticle;
@@ -2064,6 +2178,7 @@ declare module '@strapi/strapi' {
       'api::product-info.product-info': ApiProductInfoProductInfo;
       'api::retailers-page.retailers-page': ApiRetailersPageRetailersPage;
       'api::shipping-returns-page.shipping-returns-page': ApiShippingReturnsPageShippingReturnsPage;
+      'api::sustainability-policy.sustainability-policy': ApiSustainabilityPolicySustainabilityPolicy;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
       'api::warranty-page.warranty-page': ApiWarrantyPageWarrantyPage;
       'api::watches-page.watches-page': ApiWatchesPageWatchesPage;

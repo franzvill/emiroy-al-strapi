@@ -41,6 +41,32 @@ async function ensureLocales() {
   }
 }
 
+const REQUIRED_PUBLIC_PERMISSIONS = {
+  'sustainability-policy': ['find', 'findOne'],
+  'feedback-page': ['find', 'findOne'],
+};
+
+async function ensurePublicPermissions() {
+  const publicRole = await strapi.query('plugin::users-permissions.role').findOne({
+    where: { type: 'public' },
+  });
+  if (!publicRole) return;
+
+  for (const [controller, actions] of Object.entries(REQUIRED_PUBLIC_PERMISSIONS)) {
+    for (const action of actions) {
+      const fullAction = `api::${controller}.${controller}.${action}`;
+      const existing = await strapi.query('plugin::users-permissions.permission').findOne({
+        where: { action: fullAction, role: publicRole.id },
+      });
+      if (existing) continue;
+      await strapi.query('plugin::users-permissions.permission').create({
+        data: { action: fullAction, role: publicRole.id },
+      });
+      console.log(`Granted public permission: ${fullAction}`);
+    }
+  }
+}
+
 async function isFirstRun() {
   const pluginStore = strapi.store({
     environment: strapi.config.environment,
@@ -261,6 +287,8 @@ async function importSeedData() {
     author: ['find', 'findOne'],
     global: ['find', 'findOne'],
     about: ['find', 'findOne'],
+    'sustainability-policy': ['find', 'findOne'],
+    'feedback-page': ['find', 'findOne'],
   });
 
   // Create all entries
@@ -288,5 +316,6 @@ async function main() {
 
 module.exports = async () => {
   await ensureLocales();
+  await ensurePublicPermissions();
   await seedExampleApp();
 };

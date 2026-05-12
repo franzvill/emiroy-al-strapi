@@ -184,6 +184,7 @@ export interface SharedFooterLabels extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'Customer Service'>;
     facebook: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Facebook'>;
     facebookUrl: Schema.Attribute.String;
+    feedback: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Feedback'>;
     followUsTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Follow Us'>;
     instagram: Schema.Attribute.String &
@@ -196,6 +197,8 @@ export interface SharedFooterLabels extends Struct.ComponentSchema {
     shippingReturns: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Shipping & Returns'>;
     shippingReturnsUrl: Schema.Attribute.String;
+    sustainabilityPolicy: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Sustainability Policy'>;
     twitter: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Twitter'>;
     twitterUrl: Schema.Attribute.String;
     warranty: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Warranty'>;
