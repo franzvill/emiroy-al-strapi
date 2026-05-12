@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_manifesto_declarations",
+  "info": {
+    "displayName": "Manifesto Declaration",
+    "icon": "list",
+    "description": "Numbered declaration line in the manifesto"
+  },
+  "options": {},
+  "attributes": {
+    "numeral": {
+      "type": "string",
+      "required": true,
+      "description": "Roman numeral or short label (e.g. I, II, III)"
+    },
+    "text": {
+      "type": "richtext",
+      "required": true,
+      "description": "Body of the declaration. Use italics for emphasised phrases."
+    }
+  }
+}

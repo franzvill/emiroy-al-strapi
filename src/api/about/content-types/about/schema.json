@@ -68,6 +68,25 @@
           "localized": true
         }
       }
+    },
+    "discoverTitle": {
+      "type": "string",
+      "default": "Where to Discover",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "discoverLocations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.boutique",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

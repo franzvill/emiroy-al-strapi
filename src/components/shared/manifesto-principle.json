@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_manifesto_principles",
+  "info": {
+    "displayName": "Manifesto Principle",
+    "icon": "letter-case",
+    "description": "Single principle card (letter, word, description)"
+  },
+  "options": {},
+  "attributes": {
+    "letter": {
+      "type": "string",
+      "required": true,
+      "description": "Large display letter (e.g. É, M, I)"
+    },
+    "word": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

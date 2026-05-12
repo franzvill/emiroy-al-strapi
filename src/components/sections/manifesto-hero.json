@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_manifesto_heroes",
+  "info": {
+    "displayName": "Manifesto Hero",
+    "icon": "feather",
+    "description": "Top hero block: eyebrow, brand name, tagline, divider, statement"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Brand Manifesto"
+    },
+    "name": {
+      "type": "string",
+      "default": "EMI"
+    },
+    "tagline": {
+      "type": "string",
+      "default": "Élégance · Modernité · Innovation"
+    },
+    "statement": {
+      "type": "text",
+      "default": "A declaration of who you are. A companion through everything you become."
+    }
+  }
+}

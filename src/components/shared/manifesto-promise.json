@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_shared_manifesto_promises",
+  "info": {
+    "displayName": "Manifesto Promise",
+    "icon": "heart",
+    "description": "Promise item with icon, title, and body copy"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "required": true,
+      "default": "clock",
+      "enum": [
+        "clock",
+        "fingerprint",
+        "heart",
+        "shield",
+        "diamond",
+        "award",
+        "gem",
+        "sparkles",
+        "sun",
+        "star",
+        "crown",
+        "scroll"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

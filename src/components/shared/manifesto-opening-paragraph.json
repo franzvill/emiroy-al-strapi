@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_manifesto_opening_paragraphs",
+  "info": {
+    "displayName": "Manifesto Opening Paragraph",
+    "icon": "align-center",
+    "description": "Paragraph in the opening passage; choose emphasis style"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "emphasis": {
+      "type": "enumeration",
+      "required": true,
+      "default": "italic",
+      "enum": [
+        "italic",
+        "statement"
+      ],
+      "description": "italic = muted opening lines; statement = bolder closing line"
+    }
+  }
+}

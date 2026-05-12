@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_manifesto_footer_rows",
+  "info": {
+    "displayName": "Manifesto Footer Row",
+    "icon": "layout-bottombar",
+    "description": "Footer-style row at the bottom of the manifesto page"
+  },
+  "options": {},
+  "attributes": {
+    "location": {
+      "type": "string",
+      "default": "Geneva, Switzerland — Est. EMI"
+    },
+    "brandLine": {
+      "type": "string",
+      "default": "EMI · Élégance · Modernité · Innovation"
+    }
+  }
+}

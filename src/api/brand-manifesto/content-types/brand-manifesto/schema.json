@@ -1,0 +1,154 @@
+{
+  "kind": "singleType",
+  "collectionName": "brand_manifestos",
+  "info": {
+    "singularName": "brand-manifesto",
+    "pluralName": "brand-manifestos",
+    "displayName": "Brand Manifesto Page",
+    "description": "Long-form brand manifesto with hero, declarations, principles, mindset, promise, and slogan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.manifesto-hero",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "openingParagraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.manifesto-opening-paragraph",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "declarationLabel": {
+      "type": "string",
+      "default": "What we believe",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "declarations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.manifesto-declaration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "principlesLabel": {
+      "type": "string",
+      "default": "Three principles",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "principles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.manifesto-principle",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "mindsetPreLabel": {
+      "type": "string",
+      "default": "The mindset we serve",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "mindsetQuote": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "mindsetAttrs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.manifesto-mindset-attr",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "promiseLabel": {
+      "type": "string",
+      "default": "Our promise",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "promises": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.manifesto-promise",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slogan": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.manifesto-slogan",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "footerRow": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.manifesto-footer-row",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_manifesto_slogans",
+  "info": {
+    "displayName": "Manifesto Slogan",
+    "icon": "quote",
+    "description": "Closing slogan block: pre-label, main line, accent strip"
+  },
+  "options": {},
+  "attributes": {
+    "preLabel": {
+      "type": "string",
+      "default": "EMI Geneva"
+    },
+    "mainLine": {
+      "type": "text",
+      "required": true
+    },
+    "accentLine": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

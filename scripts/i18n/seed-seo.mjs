@@ -12,17 +12,17 @@ const seo = {
         "Discover EMI's Swiss-crafted automatic watches, designed and assembled in Meyrin, Geneva. The Arena Collection honours discipline and craft.",
     },
     fr: {
-      metaTitle: 'EMI Genève — Montres de luxe suisses | Collection Arena',
+      metaTitle: 'EMI Geneva — Montres de luxe suisses | Collection Arena',
       metaDescription:
         "Découvrez les montres automatiques suisses d'EMI, conçues et assemblées à Meyrin, Genève. La Collection Arena célèbre discipline et savoir-faire.",
     },
     it: {
-      metaTitle: 'EMI Ginevra — Orologi di lusso svizzeri | Collezione Arena',
+      metaTitle: 'EMI Geneva — Orologi di lusso svizzeri | Collezione Arena',
       metaDescription:
         'Scopri gli orologi automatici svizzeri di EMI, progettati e assemblati a Meyrin, Ginevra. La Collezione Arena celebra disciplina e artigianalità.',
     },
     de: {
-      metaTitle: 'EMI Genf — Schweizer Luxusuhren | Arena Kollektion',
+      metaTitle: 'EMI Geneva — Schweizer Luxusuhren | Arena Kollektion',
       metaDescription:
         'Entdecken Sie die in der Schweiz gefertigten Automatikuhren von EMI, entworfen und montiert in Meyrin, Genf. Die Arena Kollektion ehrt Handwerk.',
     },
@@ -34,17 +34,17 @@ const seo = {
         'Born in Geneva from sixty years of Swiss watchmaking, EMI is the next chapter in a family tradition. Discover the heritage and vision behind the brand.',
     },
     fr: {
-      metaTitle: 'Notre histoire | EMI Genève',
+      metaTitle: 'Notre histoire | EMI Geneva',
       metaDescription:
         "Née à Genève de soixante ans d'horlogerie suisse, EMI est le nouveau chapitre d'une tradition familiale. Découvrez l'héritage et la vision de la maison.",
     },
     it: {
-      metaTitle: 'La nostra storia | EMI Ginevra',
+      metaTitle: 'La nostra storia | EMI Geneva',
       metaDescription:
         "Nata a Ginevra da sessant'anni di alta orologeria svizzera, EMI è il nuovo capitolo di una tradizione familiare. Scoprite l'eredità e la visione del brand.",
     },
     de: {
-      metaTitle: 'Unsere Geschichte | EMI Genf',
+      metaTitle: 'Unsere Geschichte | EMI Geneva',
       metaDescription:
         'Geboren in Genf aus sechzig Jahren Schweizer Uhrmacherkunst, ist EMI das nächste Kapitel einer familiären Tradition. Entdecken Sie Erbe und Vision.',
     },
@@ -56,17 +56,17 @@ const seo = {
         'Answers to questions about EMI watches: ordering, shipping, warranty, payment, returns and care.',
     },
     fr: {
-      metaTitle: 'Questions fréquentes | EMI Genève',
+      metaTitle: 'Questions fréquentes | EMI Geneva',
       metaDescription:
         'Réponses aux questions sur les montres EMI : commandes, expédition, garantie, paiement, retours et entretien.',
     },
     it: {
-      metaTitle: 'Domande frequenti | EMI Ginevra',
+      metaTitle: 'Domande frequenti | EMI Geneva',
       metaDescription:
         'Risposte alle domande sugli orologi EMI: ordini, spedizioni, garanzia, pagamento, resi e cura.',
     },
     de: {
-      metaTitle: 'Häufig gestellte Fragen | EMI Genf',
+      metaTitle: 'Häufig gestellte Fragen | EMI Geneva',
       metaDescription:
         'Antworten auf Fragen zu EMI-Uhren: Bestellung, Versand, Garantie, Zahlung, Rückgabe und Pflege.',
     },
@@ -78,17 +78,17 @@ const seo = {
         'EMI delivery times, international shipping, returns within 14 days, and applicable customs duties for orders worldwide.',
     },
     fr: {
-      metaTitle: 'Livraison & Retours | EMI Genève',
+      metaTitle: 'Livraison & Retours | EMI Geneva',
       metaDescription:
         'Délais de livraison EMI, expédition internationale, retours sous 14 jours et droits de douane applicables aux commandes.',
     },
     it: {
-      metaTitle: 'Spedizioni e resi | EMI Ginevra',
+      metaTitle: 'Spedizioni e resi | EMI Geneva',
       metaDescription:
         'Tempi di consegna EMI, spedizioni internazionali, resi entro 14 giorni e dazi doganali applicabili agli ordini.',
     },
     de: {
-      metaTitle: 'Versand & Rückgabe | EMI Genf',
+      metaTitle: 'Versand & Rückgabe | EMI Geneva',
       metaDescription:
         'EMI-Lieferzeiten, internationaler Versand, Rückgabe innerhalb von 14 Tagen und anwendbare Zollgebühren für Bestellungen.',
     },
@@ -100,17 +100,17 @@ const seo = {
         "Each EMI timepiece is covered by a 2-year international manufacturer's warranty. Read the terms and how to file a claim.",
     },
     fr: {
-      metaTitle: 'Garantie | EMI Genève',
+      metaTitle: 'Garantie | EMI Geneva',
       metaDescription:
         'Chaque garde-temps EMI bénéficie d\'une garantie internationale de 2 ans. Conditions et procédure de réclamation.',
     },
     it: {
-      metaTitle: 'Garanzia | EMI Ginevra',
+      metaTitle: 'Garanzia | EMI Geneva',
       metaDescription:
         'Ogni segnatempo EMI è coperto da una garanzia internazionale di 2 anni. Condizioni e procedura di reclamo.',
     },
     de: {
-      metaTitle: 'Garantie | EMI Genf',
+      metaTitle: 'Garantie | EMI Geneva',
       metaDescription:
         'Jeder EMI-Zeitmesser ist durch eine internationale 2-Jahres-Herstellergarantie abgedeckt. Bedingungen und Reklamationsverfahren.',
     },
@@ -122,17 +122,17 @@ const seo = {
         'Terms governing your purchases and use of emigeneva.ch — orders, payment, warranty, returns, and applicable Swiss law.',
     },
     fr: {
-      metaTitle: "Conditions d'utilisation | EMI Genève",
+      metaTitle: "Conditions d'utilisation | EMI Geneva",
       metaDescription:
         "Conditions régissant vos achats et l'utilisation d'emigeneva.ch — commandes, paiement, garantie, retours et droit suisse applicable.",
     },
     it: {
-      metaTitle: "Condizioni d'uso | EMI Ginevra",
+      metaTitle: "Condizioni d'uso | EMI Geneva",
       metaDescription:
         "Condizioni che regolano i vostri acquisti e l'uso di emigeneva.ch — ordini, pagamento, garanzia, resi e diritto svizzero.",
     },
     de: {
-      metaTitle: 'Nutzungsbedingungen | EMI Genf',
+      metaTitle: 'Nutzungsbedingungen | EMI Geneva',
       metaDescription:
         'Bedingungen für Käufe und Nutzung von emigeneva.ch — Bestellungen, Zahlung, Garantie, Rückgabe und Schweizer Recht.',
     },

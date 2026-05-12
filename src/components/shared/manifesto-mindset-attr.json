@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_manifesto_mindset_attrs",
+  "info": {
+    "displayName": "Manifesto Mindset Attribute",
+    "icon": "spark",
+    "description": "Word + qualifier pair shown in the mindset section"
+  },
+  "options": {},
+  "attributes": {
+    "word": {
+      "type": "string",
+      "required": true,
+      "description": "Primary word (e.g. Ambition)"
+    },
+    "qualifier": {
+      "type": "string",
+      "required": true,
+      "description": "Short qualifier (e.g. turned inward)"
+    }
+  }
+}
