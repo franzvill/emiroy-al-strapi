@@ -44,7 +44,59 @@ async function ensureLocales() {
 const REQUIRED_PUBLIC_PERMISSIONS = {
   'sustainability-policy': ['find', 'findOne'],
   'feedback-page': ['find', 'findOne'],
+  'privacy-policy-page': ['find', 'findOne'],
 };
+
+const PRIVACY_POLICY_LOCALES = ['en', 'fr', 'de'];
+
+async function ensurePrivacyPolicyPage() {
+  const content = require('../data/privacy-policy-content');
+  const uid = 'api::privacy-policy-page.privacy-policy-page';
+
+  for (const locale of PRIVACY_POLICY_LOCALES) {
+    const data = content[locale];
+    if (!data) continue;
+
+    try {
+      const published = await strapi.documents(uid).findFirst({
+        locale,
+        populate: { sections: true },
+        status: 'published',
+      });
+      const draft = published
+        ? null
+        : await strapi.documents(uid).findFirst({
+            locale,
+            populate: { sections: true },
+            status: 'draft',
+          });
+      const existing = published || draft;
+
+      if (existing && existing.sections && existing.sections.length > 0) {
+        continue;
+      }
+
+      if (existing) {
+        await strapi.documents(uid).update({
+          documentId: existing.documentId,
+          locale,
+          data,
+          status: 'published',
+        });
+        console.log(`Seeded privacy-policy-page (${locale}) into existing empty entry`);
+      } else {
+        await strapi.documents(uid).create({
+          locale,
+          data,
+          status: 'published',
+        });
+        console.log(`Created privacy-policy-page (${locale}) with default content`);
+      }
+    } catch (err) {
+      console.error(`Failed to seed privacy-policy-page (${locale}):`, err.message);
+    }
+  }
+}
 
 async function ensurePublicPermissions() {
   const publicRole = await strapi.query('plugin::users-permissions.role').findOne({
@@ -317,5 +369,6 @@ async function main() {
 module.exports = async () => {
   await ensureLocales();
   await ensurePublicPermissions();
+  await ensurePrivacyPolicyPage();
   await seedExampleApp();
 };

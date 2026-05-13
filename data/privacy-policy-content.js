@@ -1,54 +1,12 @@
-#!/usr/bin/env node
-// One-off seed: populate the Privacy Policy Page single type with the content
-// previously hardcoded in website/src/pages/PrivacyPolicy.tsx, for the en, fr,
-// and de locales. Italian intentionally not seeded — matches prior behaviour
-// where the hardcoded page had no IT and fell back to English.
-//
-// Usage:
-//   STRAPI_URL=https://cms.emigeneva.ch \
-//   STRAPI_API_TOKEN=... \
-//   node scripts/seed-privacy-policy.mjs --dry-run
-//
-//   # then, once the dry-run output looks correct, drop --dry-run to write.
-//
-// Idempotent: if the entry for a locale already has sections populated, that
-// locale is skipped. Safe to re-run.
+'use strict';
 
-import fs from 'node:fs';
-import path from 'node:path';
+// Default content for the Privacy Policy Page, applied by the bootstrap
+// function on first run. Once an entry has any sections, the bootstrap leaves
+// it alone — admin edits are never overwritten. Italian intentionally omitted:
+// matches the prior hardcoded-page behaviour where IT visitors fell back to
+// EN, which is what the backend's getPrivacyPolicyPage() still does.
 
-const LOCALES = ['en', 'fr', 'de'];
-const DRY_RUN = process.argv.includes('--dry-run');
-
-function loadDotEnv() {
-  const candidates = [
-    path.resolve(process.cwd(), '../website/backend/.env'),
-    path.resolve(process.cwd(), 'website/backend/.env'),
-  ];
-  for (const file of candidates) {
-    if (!fs.existsSync(file)) continue;
-    const raw = fs.readFileSync(file, 'utf8');
-    for (const line of raw.split('\n')) {
-      const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.*)$/);
-      if (!m) continue;
-      if (!process.env[m[1]]) process.env[m[1]] = m[2].trim();
-    }
-    return;
-  }
-}
-
-loadDotEnv();
-
-const STRAPI_URL = process.env.STRAPI_URL;
-const TOKEN = process.env.STRAPI_API_TOKEN;
-if (!STRAPI_URL || !TOKEN) {
-  console.error('Missing STRAPI_URL or STRAPI_API_TOKEN');
-  process.exit(1);
-}
-
-const auth = { Authorization: `Bearer ${TOKEN}`, 'Content-Type': 'application/json' };
-
-const CONTENT = {
+module.exports = {
   en: {
     title: 'Privacy Policy',
     lastUpdated: 'Last updated: March 28, 2026',
@@ -470,72 +428,3 @@ Die fortgesetzte Nutzung unserer Website nach der Veröffentlichung von Änderun
     ],
   },
 };
-
-async function fetchPrivacy(locale) {
-  const params = new URLSearchParams({
-    locale,
-    'populate[sections]': '*',
-    'populate[seo]': '*',
-    status: 'draft',
-  });
-  const res = await fetch(`${STRAPI_URL}/api/privacy-policy-page?${params}`, { headers: auth });
-  if (res.status === 404) return null;
-  if (!res.ok) {
-    throw new Error(`GET /privacy-policy-page?locale=${locale} → ${res.status}: ${await res.text()}`);
-  }
-  const json = await res.json();
-  return json.data;
-}
-
-async function writePrivacy(locale, payload) {
-  const params = new URLSearchParams({ locale });
-  const res = await fetch(`${STRAPI_URL}/api/privacy-policy-page?${params}`, {
-    method: 'PUT',
-    headers: auth,
-    body: JSON.stringify({ data: payload }),
-  });
-  if (!res.ok) {
-    throw new Error(`PUT /privacy-policy-page?locale=${locale} → ${res.status}: ${await res.text()}`);
-  }
-  return res.json();
-}
-
-async function runLocale(locale) {
-  console.log(`\n--- ${locale} ---`);
-  const data = CONTENT[locale];
-  if (!data) {
-    console.log('  no content defined, skipping');
-    return;
-  }
-
-  const existing = await fetchPrivacy(locale);
-  if (existing && existing.sections && existing.sections.length > 0) {
-    console.log(`  already populated with ${existing.sections.length} sections, skipping`);
-    return;
-  }
-
-  console.log(`  will write title="${data.title}", ${data.sections.length} sections`);
-  if (DRY_RUN) {
-    console.log('  [dry-run] not writing');
-    return;
-  }
-  await writePrivacy(locale, data);
-  console.log('  written');
-}
-
-async function main() {
-  if (DRY_RUN) console.log('DRY RUN — no writes will be made.');
-  for (const locale of LOCALES) {
-    try {
-      await runLocale(locale);
-    } catch (err) {
-      console.error(`  ERROR for ${locale}:`, err.message);
-    }
-  }
-  console.log('\nDone. Remember to publish each locale from the Strapi admin (or use the publish API).');
-}
-
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});

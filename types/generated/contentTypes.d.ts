@@ -462,6 +462,19 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    discoverLocations: Schema.Attribute.Component<'shared.boutique', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    discoverTitle: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Where to Discover'>;
     image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -484,6 +497,139 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
         };
       }>;
     title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBrandManifestoBrandManifesto
+  extends Struct.SingleTypeSchema {
+  collectionName: 'brand_manifestos';
+  info: {
+    description: 'Long-form brand manifesto with hero, declarations, principles, mindset, promise, and slogan';
+    displayName: 'Brand Manifesto Page';
+    pluralName: 'brand-manifestos';
+    singularName: 'brand-manifesto';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    declarationLabel: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'What we believe'>;
+    declarations: Schema.Attribute.Component<
+      'shared.manifesto-declaration',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    footerRow: Schema.Attribute.Component<
+      'sections.manifesto-footer-row',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    hero: Schema.Attribute.Component<'sections.manifesto-hero', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::brand-manifesto.brand-manifesto'
+    >;
+    mindsetAttrs: Schema.Attribute.Component<
+      'shared.manifesto-mindset-attr',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    mindsetPreLabel: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'The mindset we serve'>;
+    mindsetQuote: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    openingParagraphs: Schema.Attribute.Component<
+      'shared.manifesto-opening-paragraph',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    principles: Schema.Attribute.Component<'shared.manifesto-principle', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    principlesLabel: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Three principles'>;
+    promiseLabel: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Our promise'>;
+    promises: Schema.Attribute.Component<'shared.manifesto-promise', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slogan: Schema.Attribute.Component<'sections.manifesto-slogan', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -589,12 +735,6 @@ export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    items: Schema.Attribute.Component<'shared.faq-item', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1001,6 +1141,69 @@ export interface ApiPricingPolicyPagePricingPolicyPage
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::pricing-policy-page.pricing-policy-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Component<'shared.terms-section', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPagePrivacyPolicyPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policy_pages';
+  info: {
+    description: 'Manage Privacy Policy page content';
+    displayName: 'Privacy Policy Page';
+    pluralName: 'privacy-policy-pages';
+    singularName: 'privacy-policy-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    intro: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    lastUpdated: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy-page.privacy-policy-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.Component<'shared.terms-section', true> &
@@ -2163,6 +2366,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::brand-manifesto.brand-manifesto': ApiBrandManifestoBrandManifesto;
       'api::collectors-page.collectors-page': ApiCollectorsPageCollectorsPage;
       'api::corporate-page.corporate-page': ApiCorporatePageCorporatePage;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
@@ -2173,6 +2377,7 @@ declare module '@strapi/strapi' {
       'api::newsroom-page.newsroom-page': ApiNewsroomPageNewsroomPage;
       'api::personalized-page.personalized-page': ApiPersonalizedPagePersonalizedPage;
       'api::pricing-policy-page.pricing-policy-page': ApiPricingPolicyPagePricingPolicyPage;
+      'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::product-card.product-card': ApiProductCardProductCard;
       'api::product-gallery.product-gallery': ApiProductGalleryProductGallery;
       'api::product-info.product-info': ApiProductInfoProductInfo;

@@ -10,6 +10,10 @@
       "type": "string",
       "default": "Our Story"
     },
+    "brandManifestoLabel": {
+      "type": "string",
+      "default": "Brand Manifesto"
+    },
     "newsroomLabel": {
       "type": "string",
       "default": "Newsroom"

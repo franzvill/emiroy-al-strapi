@@ -89,6 +89,54 @@ export interface SectionsDetailShowcase extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsManifestoFooterRow extends Struct.ComponentSchema {
+  collectionName: 'components_sections_manifesto_footer_rows';
+  info: {
+    description: 'Footer-style row at the bottom of the manifesto page';
+    displayName: 'Manifesto Footer Row';
+    icon: 'layout-bottombar';
+  };
+  attributes: {
+    brandLine: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'EMI \u00B7 \u00C9l\u00E9gance \u00B7 Modernit\u00E9 \u00B7 Innovation'>;
+    location: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Geneva, Switzerland \u2014 Est. EMI'>;
+  };
+}
+
+export interface SectionsManifestoHero extends Struct.ComponentSchema {
+  collectionName: 'components_sections_manifesto_heroes';
+  info: {
+    description: 'Top hero block: eyebrow, brand name, tagline, divider, statement';
+    displayName: 'Manifesto Hero';
+    icon: 'feather';
+  };
+  attributes: {
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Brand Manifesto'>;
+    name: Schema.Attribute.String & Schema.Attribute.DefaultTo<'EMI'>;
+    statement: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'A declaration of who you are. A companion through everything you become.'>;
+    tagline: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'\u00C9l\u00E9gance \u00B7 Modernit\u00E9 \u00B7 Innovation'>;
+  };
+}
+
+export interface SectionsManifestoSlogan extends Struct.ComponentSchema {
+  collectionName: 'components_sections_manifesto_slogans';
+  info: {
+    description: 'Closing slogan block: pre-label, main line, accent strip';
+    displayName: 'Manifesto Slogan';
+    icon: 'quote';
+  };
+  attributes: {
+    accentLine: Schema.Attribute.String & Schema.Attribute.Required;
+    mainLine: Schema.Attribute.Text & Schema.Attribute.Required;
+    preLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'EMI Geneva'>;
+  };
+}
+
 export interface SharedAboutSubmenu extends Struct.ComponentSchema {
   collectionName: 'components_shared_about_submenu';
   info: {
@@ -96,6 +144,8 @@ export interface SharedAboutSubmenu extends Struct.ComponentSchema {
     displayName: 'About Submenu';
   };
   attributes: {
+    brandManifestoLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Brand Manifesto'>;
     collectorsLabel: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Private presentation for collectors'>;
     corporateLabel: Schema.Attribute.String &
@@ -120,6 +170,7 @@ export interface SharedBoutique extends Struct.ComponentSchema {
   attributes: {
     address: Schema.Attribute.String & Schema.Attribute.Required;
     hours: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -173,17 +224,32 @@ export interface SharedFooterLabels extends Struct.ComponentSchema {
   };
   attributes: {
     aboutTitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'About'>;
+    brandManifesto: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Brand Manifesto'>;
     collection: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Collection'>;
+    collectorsPresentation: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Private presentation for collectors'>;
+    contactFormCta: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Send us a message'>;
     contactUs: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Contact Us'>;
     contactUsUrl: Schema.Attribute.String;
+    cookiePolicy: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Cookie Policy'>;
+    cookieSettings: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Cookie Settings'>;
     copyrightText: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'EMI. All rights reserved.'>;
+    corporateRequests: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Corporate requests'>;
+    currencyTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Currency'>;
     customerServiceTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Customer Service'>;
     facebook: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Facebook'>;
     facebookUrl: Schema.Attribute.String;
+    faq: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQ'>;
     feedback: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Feedback'>;
     followUsTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Follow Us'>;
@@ -194,15 +260,111 @@ export interface SharedFooterLabels extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'Language'>;
     ourStory: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'About Brand'>;
+    pricingPolicy: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Pricing Policy'>;
+    privacyPolicy: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Privacy Policy'>;
+    retailersPartnership: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<"Retailers' partnerships application">;
     shippingReturns: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Shipping & Returns'>;
     shippingReturnsUrl: Schema.Attribute.String;
     sustainabilityPolicy: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Sustainability Policy'>;
+    termsConditions: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Terms & Conditions'>;
     twitter: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Twitter'>;
     twitterUrl: Schema.Attribute.String;
-    warranty: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Warranty'>;
+    warranty: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Warranty Policy'>;
     warrantyUrl: Schema.Attribute.String;
+  };
+}
+
+export interface SharedManifestoDeclaration extends Struct.ComponentSchema {
+  collectionName: 'components_shared_manifesto_declarations';
+  info: {
+    description: 'Numbered declaration line in the manifesto';
+    displayName: 'Manifesto Declaration';
+    icon: 'list';
+  };
+  attributes: {
+    numeral: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedManifestoMindsetAttr extends Struct.ComponentSchema {
+  collectionName: 'components_shared_manifesto_mindset_attrs';
+  info: {
+    description: 'Word + qualifier pair shown in the mindset section';
+    displayName: 'Manifesto Mindset Attribute';
+    icon: 'spark';
+  };
+  attributes: {
+    qualifier: Schema.Attribute.String & Schema.Attribute.Required;
+    word: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedManifestoOpeningParagraph
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_manifesto_opening_paragraphs';
+  info: {
+    description: 'Paragraph in the opening passage; choose emphasis style';
+    displayName: 'Manifesto Opening Paragraph';
+    icon: 'align-center';
+  };
+  attributes: {
+    emphasis: Schema.Attribute.Enumeration<['italic', 'statement']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'italic'>;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedManifestoPrinciple extends Struct.ComponentSchema {
+  collectionName: 'components_shared_manifesto_principles';
+  info: {
+    description: 'Single principle card (letter, word, description)';
+    displayName: 'Manifesto Principle';
+    icon: 'letter-case';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    letter: Schema.Attribute.String & Schema.Attribute.Required;
+    word: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedManifestoPromise extends Struct.ComponentSchema {
+  collectionName: 'components_shared_manifesto_promises';
+  info: {
+    description: 'Promise item with icon, title, and body copy';
+    displayName: 'Manifesto Promise';
+    icon: 'heart';
+  };
+  attributes: {
+    body: Schema.Attribute.Text & Schema.Attribute.Required;
+    icon: Schema.Attribute.Enumeration<
+      [
+        'clock',
+        'fingerprint',
+        'heart',
+        'shield',
+        'diamond',
+        'award',
+        'gem',
+        'sparkles',
+        'sun',
+        'star',
+        'crown',
+        'scroll',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'clock'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -302,12 +464,20 @@ declare module '@strapi/strapi' {
       'sections.card': SectionsCard;
       'sections.collection-cta': SectionsCollectionCta;
       'sections.detail-showcase': SectionsDetailShowcase;
+      'sections.manifesto-footer-row': SectionsManifestoFooterRow;
+      'sections.manifesto-hero': SectionsManifestoHero;
+      'sections.manifesto-slogan': SectionsManifestoSlogan;
       'shared.about-submenu': SharedAboutSubmenu;
       'shared.boutique': SharedBoutique;
       'shared.contact-info': SharedContactInfo;
       'shared.faq-item': SharedFaqItem;
       'shared.faq-section': SharedFaqSection;
       'shared.footer-labels': SharedFooterLabels;
+      'shared.manifesto-declaration': SharedManifestoDeclaration;
+      'shared.manifesto-mindset-attr': SharedManifestoMindsetAttr;
+      'shared.manifesto-opening-paragraph': SharedManifestoOpeningParagraph;
+      'shared.manifesto-principle': SharedManifestoPrinciple;
+      'shared.manifesto-promise': SharedManifestoPromise;
       'shared.media': SharedMedia;
       'shared.navigation-labels': SharedNavigationLabels;
       'shared.quote': SharedQuote;
