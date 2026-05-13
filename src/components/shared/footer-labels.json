@@ -14,25 +14,86 @@
       "type": "string",
       "default": "About Brand"
     },
+    "brandManifesto": {
+      "type": "string",
+      "default": "Brand Manifesto"
+    },
     "collection": {
       "type": "string",
       "default": "Collection"
+    },
+    "collectorsPresentation": {
+      "type": "string",
+      "default": "Private presentation for collectors"
+    },
+    "retailersPartnership": {
+      "type": "string",
+      "default": "Retailers' partnerships application"
+    },
+    "corporateRequests": {
+      "type": "string",
+      "default": "Corporate requests"
     },
     "customerServiceTitle": {
       "type": "string",
       "default": "Customer Service"
     },
+    "faq": {
+      "type": "string",
+      "default": "FAQ"
+    },
     "contactUs": {
       "type": "string",
       "default": "Contact Us"
+    },
+    "contactUsUrl": {
+      "type": "string"
+    },
+    "contactFormCta": {
+      "type": "string",
+      "default": "Send us a message"
     },
     "shippingReturns": {
       "type": "string",
       "default": "Shipping & Returns"
     },
+    "shippingReturnsUrl": {
+      "type": "string"
+    },
     "warranty": {
       "type": "string",
-      "default": "Warranty"
+      "default": "Warranty Policy"
+    },
+    "warrantyUrl": {
+      "type": "string"
+    },
+    "termsConditions": {
+      "type": "string",
+      "default": "Terms & Conditions"
+    },
+    "pricingPolicy": {
+      "type": "string",
+      "default": "Pricing Policy"
+    },
+    "privacyPolicy": {
+      "type": "string",
+      "default": "Privacy Policy"
+    },
+    "cookieSettings": {
+      "type": "string",
+      "default": "Cookie Settings"
+    },
+    "cookiePolicy": {
+      "type": "string",
+      "default": "Cookie Policy"
+    },
+    "sustainabilityPolicy": {
+      "type": "string",
+      "default": "Sustainability Policy"
+    },
+    "feedback": {
+      "type": "string",
+      "default": "Feedback"
     },
     "followUsTitle": {
       "type": "string",
@@ -59,30 +120,17 @@
     "twitterUrl": {
       "type": "string"
     },
-    "contactUsUrl": {
-      "type": "string"
-    },
-    "shippingReturnsUrl": {
-      "type": "string"
-    },
-    "warrantyUrl": {
-      "type": "string"
-    },
     "languageTitle": {
       "type": "string",
       "default": "Language"
     },
+    "currencyTitle": {
+      "type": "string",
+      "default": "Currency"
+    },
     "copyrightText": {
       "type": "string",
       "default": "EMI. All rights reserved."
-    },
-    "sustainabilityPolicy": {
-      "type": "string",
-      "default": "Sustainability Policy"
-    },
-    "feedback": {
-      "type": "string",
-      "default": "Feedback"
     }
   }
 }
