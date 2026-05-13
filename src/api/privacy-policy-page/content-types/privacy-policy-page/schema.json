@@ -1,11 +1,11 @@
 {
   "kind": "singleType",
-  "collectionName": "pricing_policy_pages",
+  "collectionName": "privacy_policy_pages",
   "info": {
-    "singularName": "pricing-policy-page",
-    "pluralName": "pricing-policy-pages",
-    "displayName": "Pricing Policy Page",
-    "description": "Manage Pricing Policy page content"
+    "singularName": "privacy-policy-page",
+    "pluralName": "privacy-policy-pages",
+    "displayName": "Privacy Policy Page",
+    "description": "Manage Privacy Policy page content"
   },
   "options": {
     "draftAndPublish": true
