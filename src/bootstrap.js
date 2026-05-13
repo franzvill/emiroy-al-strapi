@@ -47,7 +47,7 @@ const REQUIRED_PUBLIC_PERMISSIONS = {
   'privacy-policy-page': ['find', 'findOne'],
 };
 
-const PRIVACY_POLICY_LOCALES = ['en', 'fr', 'de'];
+const PRIVACY_POLICY_LOCALES = ['en', 'fr', 'it', 'de'];
 
 async function ensurePrivacyPolicyPage() {
   const content = require('../data/privacy-policy-content');

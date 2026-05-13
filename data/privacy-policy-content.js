@@ -2,9 +2,7 @@
 
 // Default content for the Privacy Policy Page, applied by the bootstrap
 // function on first run. Once an entry has any sections, the bootstrap leaves
-// it alone — admin edits are never overwritten. Italian intentionally omitted:
-// matches the prior hardcoded-page behaviour where IT visitors fell back to
-// EN, which is what the backend's getPrivacyPolicyPage() still does.
+// it alone — admin edits are never overwritten.
 
 module.exports = {
   en: {
@@ -424,6 +422,147 @@ Die fortgesetzte Nutzung unserer Website nach der Veröffentlichung von Änderun
       {
         heading: '11. Datensicherheit',
         body: `Wir treffen geeignete technische und organisatorische Maßnahmen, um Ihre personenbezogenen Daten vor unbefugtem Zugriff, Verlust, Missbrauch oder Veränderung zu schützen. Diese Maßnahmen umfassen Zugriffskontrollen, Verschlüsselung soweit angemessen und sichere Hosting-Umgebungen. Allerdings ist keine Methode der Übertragung über das Internet oder der elektronischen Speicherung vollständig sicher, und wir können keine absolute Sicherheit garantieren.`,
+      },
+    ],
+  },
+  it: {
+    title: 'Informativa sulla privacy',
+    lastUpdated: 'Ultimo aggiornamento: 28 marzo 2026',
+    seo: {
+      metaTitle: 'Informativa sulla privacy',
+      metaDescription:
+        'Scopri come GALENO, EMIROYALE raccoglie, utilizza e protegge i tuoi dati personali in conformità alla normativa svizzera ed europea in materia di protezione dei dati.',
+    },
+    sections: [
+      {
+        heading: '1. Titolare del trattamento',
+        body: `Il titolare del trattamento dei tuoi dati personali è:
+
+GALENO, EMIROYALE
+Cours des Bastions 13
+1205 Ginevra
+Svizzera
+
+Numero di registrazione: CH-660.0.536.024-0
+Contatto: contact@emigeneva.ch`,
+      },
+      {
+        heading: '2. Dati che raccogliamo',
+        body: `Raccogliamo e trattiamo le seguenti categorie di dati personali:
+
+• Informazioni sull'account (tramite Shopify): quando crei un account o effettui un ordine, raccogliamo il tuo nome, indirizzo e-mail, numero di telefono, indirizzo di fatturazione e di consegna e i dettagli dell'ordine.
+
+• Invio di moduli: quando invii un modulo di contatto, una richiesta di richiamata, una notifica di disponibilità, una richiesta di presentazione per collezionisti, una richiesta di partnership con rivenditori, una richiesta corporate o una richiesta di personalizzazione, raccogliamo il tuo nome, indirizzo e-mail, numero di telefono e qualsiasi informazione aziendale o aggiuntiva che scegli di fornire.
+
+• Dati analitici e di cookie: utilizziamo cookie e tecnologie analitiche, tra cui Google Analytics, Meta Ads Manager e il nostro sistema di analisi self-hosted, per raccogliere informazioni su visualizzazioni di pagina, sorgenti di traffico, visualizzazioni di prodotti, interazioni con il carrello, attività di sessione, performance pubblicitarie e comportamento dei visitatori, al fine di comprendere come viene utilizzato il nostro sito web e migliorare i nostri servizi.
+
+• Dati tecnici: raccogliamo automaticamente informazioni tecniche quando visiti il nostro sito web, tra cui il tuo indirizzo IP, il tipo di browser, il tipo di dispositivo, il sistema operativo, le preferenze linguistiche, gli URL di riferimento e i dati di geolocalizzazione generici derivati dal tuo indirizzo IP.
+
+• Dati di pagamento: quando completi un acquisto utilizzando fornitori di servizi di pagamento come Klarna, Apple Pay o Google Pay, determinate informazioni relative al pagamento, identificativi di transazione e dati di autenticazione possono essere trattati da tali fornitori per completare e proteggere la transazione.
+
+• Dati di marketing e pubblicità: tramite Meta Ads Manager e tecnologie analoghe, possiamo raccogliere informazioni relative a interazioni pubblicitarie, attribuzione delle campagne e coinvolgimento con le nostre pubblicità su piattaforme di terze parti.
+
+• Interazioni in chat: raccogliamo e conserviamo il contenuto dei messaggi scambiati tramite il nostro widget di assistenza clienti Talven, insieme ai relativi dati di contatto e alla cronologia del supporto, ove applicabile.`,
+      },
+      {
+        heading: '3. Base giuridica del trattamento',
+        body: `Trattiamo i tuoi dati personali sulle seguenti basi giuridiche:
+
+• Consenso (articolo 6, paragrafo 1, lettera a, GDPR): ci basiamo sul tuo consenso per l'uso dei cookie analitici e per il trattamento dei dati inviati tramite moduli di contatto e di richiesta facoltativi. Puoi revocare il consenso in qualsiasi momento.
+
+• Esecuzione di un contratto (articolo 6, paragrafo 1, lettera b, GDPR): trattiamo i dati dell'account, dell'ordine e del pagamento nella misura necessaria per dare seguito agli acquisti effettuati tramite il nostro checkout Shopify, incluse le transazioni elaborate da fornitori di servizi di pagamento terzi come Klarna, Apple Pay e Google Pay.
+
+• Legittimi interessi (articolo 6, paragrafo 1, lettera f, GDPR): trattiamo determinati dati tecnici, di sicurezza e di utilizzo per proteggere la sicurezza del nostro sito web, prevenire frodi, garantire un trattamento sicuro dei pagamenti, migliorare i nostri servizi e mantenere il corretto funzionamento del sito, ove tali interessi non siano prevalsi dai tuoi diritti e libertà.
+
+I fornitori di servizi di pagamento come Klarna, Apple Pay e Google Pay agiscono come titolari del trattamento indipendenti per determinate attività di trattamento, tra cui l'autenticazione dei pagamenti e la prevenzione delle frodi.`,
+      },
+      {
+        heading: '4. Destinatari terzi',
+        body: `Possiamo condividere i tuoi dati personali con i seguenti fornitori di servizi terzi:
+
+• Shopify Inc. (Canada / Stati Uniti): la nostra piattaforma e-commerce, che tratta i dati relativi a ordini, pagamenti, consegne e account. Shopify è certificata in conformità ai meccanismi di trasferimento dei dati applicabili.
+
+• Google LLC (Stati Uniti): utilizziamo Google Analytics per l'analisi del sito web e i servizi correlati di Google per la funzionalità e il monitoraggio delle prestazioni del sito. Google tratta dati analitici, tecnici e di utilizzo in conformità alle proprie condizioni sulla privacy e alle clausole contrattuali tipo applicabili.
+
+• Meta Platforms, Inc. (Stati Uniti): utilizziamo Meta Ads Manager e le relative tecnologie pubblicitarie per misurare le prestazioni pubblicitarie, l'attribuzione delle campagne e il coinvolgimento degli utenti sulle piattaforme Meta. Meta può trattare identificatori di cookie, dati tecnici e dati di interazione in conformità alle proprie informative sulla privacy e alle garanzie applicabili per i trasferimenti di dati.
+
+• Klarna Bank AB (Svezia): offriamo Klarna come opzione di pagamento al checkout. Klarna può trattare informazioni di pagamento, dati di contatto, informazioni sull'ordine e dati finanziari per il trattamento dei pagamenti, la prevenzione delle frodi e i servizi di finanziamento, in conformità alla propria informativa sulla privacy e agli obblighi di legge applicabili.
+
+• Apple Pay e Google Pay: ove disponibili come metodi di pagamento, Apple Pay e Google Pay possono trattare dati di autenticazione del pagamento, informazioni di pagamento tokenizzate e identificatori legati al dispositivo per agevolare transazioni di pagamento sicure. Tale trattamento avviene in conformità alle rispettive informative sulla privacy dei fornitori e agli obblighi di legge applicabili.
+
+• Talven: il nostro fornitore del widget di assistenza clienti, che tratta il contenuto delle interazioni in chat e le relative informazioni di assistenza clienti.
+
+• Adobe Inc. (Stati Uniti): utilizziamo Adobe TypeKit per la distribuzione di font web e i servizi tipografici, che possono trattare informazioni tecniche come l'indirizzo IP e dati relativi al browser durante il caricamento dei font.
+
+Si segnala che il nostro sistema di gestione dei contenuti e il backend analitico personalizzato sono ospitati internamente e non comportano trasferimenti di dati a terzi.`,
+      },
+      {
+        heading: '5. Trasferimenti internazionali di dati',
+        body: `Alcuni dei nostri fornitori di servizi terzi sono ubicati al di fuori della Svizzera e dello Spazio economico europeo (SEE), tra cui negli Stati Uniti e in altre giurisdizioni in cui le leggi sulla protezione dei dati possono differire da quelle applicabili in Svizzera o nel SEE. Ciò può includere fornitori come Shopify, Google, Meta, Klarna, Apple Pay e Google Pay, nonché le rispettive società affiliate e i sub-responsabili autorizzati.
+
+Quando trasferiamo dati personali in paesi che non offrono un livello di protezione equivalente, ci basiamo su garanzie adeguate quali:
+
+• Le clausole contrattuali tipo (SCC) adottate dalla Commissione europea e riconosciute ai sensi del diritto svizzero in materia di protezione dei dati; e
+• Le decisioni di adeguatezza emesse dalla Commissione europea o dal Consiglio federale svizzero, ove applicabili.
+
+Ove necessario, adottiamo inoltre misure contrattuali, tecniche e organizzative aggiuntive destinate a proteggere i dati personali durante i trasferimenti internazionali.
+
+Puoi richiedere ulteriori informazioni sulle garanzie specifiche in essere contattandoci all'indirizzo contact@emigeneva.ch.`,
+      },
+      {
+        heading: '6. Periodo di conservazione',
+        body: `Conserviamo i tuoi dati personali per i seguenti periodi:
+
+• Preferenze di consenso: 13 mesi dalla data del consenso.
+• Dati di Google Analytics: 14 mesi, in conformità alle impostazioni di conservazione predefinite di Google Analytics.
+• Dati analitici personalizzati: 14 mesi.
+• Dati inviati tramite moduli: conservati per il tempo necessario a rispondere alla tua richiesta e per qualsiasi periodo di follow-up richiesto dai nostri legittimi interessi o dagli obblighi di legge.
+• Dati di assistenza in chat: conservati per il tempo necessario a gestire le richieste di assistenza clienti, mantenere la continuità del servizio e adempiere agli obblighi di legge applicabili.
+• Dati di account e ordini: conservati per tutto il tempo in cui il tuo account rimane attivo e per il periodo richiesto dalla normativa svizzera commerciale, contabile e fiscale applicabile a seguito della cancellazione dell'account.
+• Dati di pagamento e di transazione: quando gli acquisti vengono elaborati da fornitori di servizi di pagamento terzi come Klarna, Apple Pay o Google Pay, determinati dati di pagamento, transazione e prevenzione delle frodi possono essere conservati da tali fornitori in conformità ai loro obblighi legali, regolamentari, contabili e di compliance.`,
+      },
+      {
+        heading: '7. I tuoi diritti come interessato',
+        body: `Fatto salvo quanto previsto dalla legge applicabile, hai i seguenti diritti relativamente ai tuoi dati personali:
+
+• Diritto di accesso: puoi richiedere una copia dei dati personali che conserviamo su di te.
+• Diritto di rettifica: puoi richiedere la correzione di dati inesatti o incompleti.
+• Diritto di cancellazione: puoi richiedere la cancellazione dei tuoi dati personali in determinate circostanze.
+• Diritto di limitazione del trattamento: puoi richiedere la limitazione del trattamento dei tuoi dati in determinate circostanze.
+• Diritto alla portabilità dei dati: puoi richiedere che ti forniamo i tuoi dati in un formato strutturato, di uso comune e leggibile da un dispositivo automatico.
+• Diritto di opposizione: puoi opporti al trattamento dei tuoi dati quando ci basiamo sui legittimi interessi.
+• Diritto di revocare il consenso: ove il trattamento sia basato sul consenso, puoi revocarlo in qualsiasi momento, senza che ciò pregiudichi la liceità del trattamento precedente.
+• Diritti relativi al trattamento da parte di terzi: ove i tuoi dati personali siano trattati tramite servizi terzi quali fornitori di servizi di pagamento (ad esempio Klarna, Apple Pay, Google Pay), puoi esercitare i tuoi diritti anche direttamente nei confronti di tali fornitori, in conformità alle rispettive informative sulla privacy.
+• Diritto di proporre reclamo: hai il diritto di proporre reclamo all'autorità competente in materia di protezione dei dati qualora ritenga che il trattamento dei tuoi dati personali violi la normativa applicabile in materia di protezione dei dati.
+
+Per esercitare uno qualsiasi di questi diritti, contattaci all'indirizzo contact@emigeneva.ch.
+
+Risponderemo alla tua richiesta entro 30 giorni. Potremmo chiederti di verificare la tua identità prima di trattare la richiesta.`,
+      },
+      {
+        heading: '8. Autorità di controllo',
+        body: `Hai il diritto di proporre reclamo a un'autorità di controllo competente in materia di protezione dei dati. A seconda del tuo luogo di residenza, puoi contattare le seguenti autorità:
+
+• Svizzera: Incaricato federale della protezione dei dati e della trasparenza (IFPDT) — www.edoeb.admin.ch
+• Italia: Garante per la protezione dei dati personali — www.garanteprivacy.it
+• Francia: Commission Nationale de l'Informatique et des Libertés (CNIL) — www.cnil.fr
+• Altri Stati membri dell'UE: l'autorità di protezione dei dati dello Stato membro dell'UE in cui risiedi.`,
+      },
+      {
+        heading: '9. Cookie',
+        body: `Utilizziamo cookie e tecnologie di tracciamento analoghe sul nostro sito web. I cookie necessari sono sempre attivi e non possono essere disattivati. I cookie analitici si attivano solo dopo che hai fornito il tuo consenso.
+
+Per dettagli completi sui cookie che utilizziamo e su come gestire le tue preferenze, consulta la nostra Cookie Policy all'indirizzo https://www.emigeneva.ch/cookie-policy.`,
+      },
+      {
+        heading: '10. Modifiche alla presente informativa',
+        body: `Ci riserviamo il diritto di aggiornare in qualsiasi momento la presente Informativa sulla privacy per riflettere modifiche della normativa applicabile, delle nostre pratiche di trattamento dei dati o dei servizi offerti. In caso di modifiche sostanziali, aggiorneremo la data di "Ultimo aggiornamento" all'inizio di questa pagina. Ti invitiamo a consultare periodicamente la presente informativa.
+
+L'uso continuato del nostro sito web dopo la pubblicazione delle modifiche costituisce conferma della tua presa visione dell'informativa aggiornata.`,
+      },
+      {
+        heading: '11. Sicurezza dei dati',
+        body: `Adottiamo misure tecniche e organizzative adeguate per proteggere i tuoi dati personali da accessi non autorizzati, perdite, usi impropri o alterazioni. Tali misure includono controlli degli accessi, crittografia ove appropriato e ambienti di hosting sicuri. Tuttavia, nessun metodo di trasmissione su Internet o di archiviazione elettronica è completamente sicuro e non possiamo garantire una sicurezza assoluta.`,
       },
     ],
   },
